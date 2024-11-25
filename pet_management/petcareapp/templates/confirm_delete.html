@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm Deletion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4ff;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #dc3545;
+            text-align: center;
+        }
+        .button {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            background-color: #dc3545;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Are you sure you want to delete {{ customer.first_name }} {{ customer.last_name }}?</h1>
+    <div class="button">
+        <form action="{% url 'delete_customer' customer.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Yes, Delete</button>
+        </form>
+        <button onclick="location.href='/create'">Cancel</button>
+
+    </div>
+</body>
+</html>

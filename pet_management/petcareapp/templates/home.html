@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pet Care Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4ff;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #3b5998; /* Change to your desired color */
+            padding: 10px 0;
+            color: white;
+        }
+        nav {
+            margin: 20px;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        .flex-container {
+            display: flex;
+            flex-direction: column; /* Change to column for vertical stacking */
+            justify-content: center; /* Center items vertically */
+            align-items: center; /* Center items horizontally */
+            height: 100vh;  /* Ensures full viewport height */
+            color: white;
+        }
+        button {
+            padding: 10px 20px;        
+            font-size: 16px;           
+            cursor: pointer;   
+            background-color: #3b5998;          
+        }
+        button:hover {
+            background-color: #4c7de9;
+        }
+        img {
+            max-width: 100px;          
+            height: auto;              
+        }
+        .photo {
+            width: 3rem;
+            height: 4rem;
+        }
+        .intro {
+            background-color: #ffffff; 
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 600px; /* Restrict max width */
+            margin: 20px; /* Add margin for spacing */
+            color: black;
+            text-align: center; /* Center text in intro */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'appointments' %}">Appointments</a>
+            <a href="{% url 'customers' %}">Customers</a>
+            <a href="{% url 'add_customer' %}">Add Customer</a>
+            <a href="{% url 'add_appointment' %}">Add Appointment</a>
+            <a href="{% url 'statistics' %}">Statistics</a>
+        </nav>
+    </header>
+
+    <div class="flex-container">
+        <div class="intro">
+            <h1>Welcome to Pup 'N' Play Pet Care!</h1>
+            <p>Your one-stop solution for all your pet care needs. We provide comprehensive services to ensure your pets are happy, healthy, and well-cared for.</p>
+            <p>From appointments to customer management, our system is designed to make pet care easy and efficient.</p>
+        </div>
+        <button onclick="location.href='/create'" >Get started</button>
+
+    </div>
+    
+</body>
+</html>
